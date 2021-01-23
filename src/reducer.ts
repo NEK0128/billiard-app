@@ -19,6 +19,6 @@ export const Reducer = reducerWithInitialState(initialState)
     .case(TextInputActions.start180CountDown, (state) => {
         return { ...state, clickCount: 180 }
     })
-    .case(TextInputActions.updateClickCount, (state) => {
-        return { ...state, clickCount: state.clickCount + 1 }
+    .case(TextInputActions.addExtTimeCountDown, (state) => {
+        return { ...state, clickCount: state.clickCount + 30 }
     })
