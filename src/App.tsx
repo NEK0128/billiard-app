@@ -5,7 +5,7 @@ import TopPageContainer from './containers/TopPageContainer';
 
 const App: React.FC = () => {
   return (
-    <GenericTemplate title="foobar">
+    <GenericTemplate title="ショットクロック">
       <React.Fragment>
         <TopPageContainer/>
       </React.Fragment>

@@ -7,7 +7,7 @@ interface OwnProps {
 type Props = OwnProps
 export const SubmitButton : React.FC<Props> = props => {
     return(
-        <div>
+        <div className="SubmitButton">
             <button onClick={() => props.onClick()}>{props.title}</button>
         </div>
     )
