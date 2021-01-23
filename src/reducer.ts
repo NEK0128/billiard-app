@@ -10,15 +10,15 @@ export const initialState: State = {
 }
 
 export const Reducer = reducerWithInitialState(initialState)
-    // .case(TextInputActions.start35CountDown, (state) => {
-    //     return { ...state, clickCount: 35 }
-    // })
-    // .case(TextInputActions.start60CountDown, (state) => {
-    //     return { ...state, clickCount: 60 }
-    // })
-    // .case(TextInputActions.start180CountDown, (state) => {
-    //     return { ...state, clickCount: 180 }
-    // })
+    .case(TextInputActions.start35CountDown, (state) => {
+        return { ...state, clickCount: 35 }
+    })
+    .case(TextInputActions.start60CountDown, (state) => {
+        return { ...state, clickCount: 60 }
+    })
+    .case(TextInputActions.start180CountDown, (state) => {
+        return { ...state, clickCount: 180 }
+    })
     .case(TextInputActions.updateClickCount, (state) => {
         return { ...state, clickCount: state.clickCount + 1 }
     })
