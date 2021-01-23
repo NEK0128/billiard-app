@@ -20,7 +20,6 @@ export class TopPageForm extends React.Component<Props> {
                 <RadioInput title='ラジオ' selectedValue={this.props.selectedValue} onChangeValue={this.props.handleOnSelectValue}/>
                 <SubmitButton title='Click me' onClick={this.props.handleOnClick}/>
                 <ShowState inputValue={this.props.inputValue} selectedValue={this.props.selectedValue} clickCount={this.props.clickCount}/>
-
             </React.Fragment>
         )
     }
