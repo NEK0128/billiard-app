@@ -22,3 +22,6 @@ export const Reducer = reducerWithInitialState(initialState)
     .case(TextInputActions.addExtTimeCountDown, (state) => {
         return { ...state, clickCount: state.clickCount + 30 }
     })
+    .case(TextInputActions.tick, (state) => {
+        return { ...state, clickCount: state.clickCount > 0 ? state.clickCount - 1 : 0 }
+    })

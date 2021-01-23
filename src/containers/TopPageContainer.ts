@@ -9,6 +9,7 @@ export interface TopPageHandler {
     handleOn35ButtonClick(): void
     handleOn60ButtonClick(): void
     handleOn180ButtonClick(): void
+    handleOnTick(): void
 }
 
 const mapStateToProps = (appState: AppState) => {
@@ -23,6 +24,7 @@ const mapDispatchToProps = (dispatch: Dispatch) => {
         handleOn35ButtonClick: () => { dispatch(TextInputActions.start35CountDown()) },
         handleOn60ButtonClick: () => { dispatch(TextInputActions.start60CountDown()) },
         handleOn180ButtonClick: () => { dispatch(TextInputActions.start180CountDown()) },
+        handleOnTick: () => { dispatch(TextInputActions.tick()) },
     }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(TopPageForm)

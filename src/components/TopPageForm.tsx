@@ -9,6 +9,12 @@ interface OwnProps {
 }
 type Props =  OwnProps & TopPageHandler
 export class TopPageForm extends React.Component<Props> {
+
+    constructor(props:any){
+        console.log("const")
+        super(props);
+        this.timer();
+    }
     render(){
         return(
             <React.Fragment>
@@ -19,5 +25,13 @@ export class TopPageForm extends React.Component<Props> {
                 <ShowState clickCount={this.props.clickCount}/>
             </React.Fragment>
         )
+    }
+    timer(){
+        console.log("timer")
+        setInterval(
+            // () => this.props.handleOnTick,
+            this.props.handleOnTick,
+            1000
+        );
     }
 }
