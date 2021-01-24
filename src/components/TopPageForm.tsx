@@ -4,7 +4,8 @@ import { ShowState } from './ShowState';
 import { SubmitButton } from './SubmitButton';
 
 interface OwnProps {
-    clickCount: number
+    clickCount: number,
+    maxCount: number,
 }
 type Props =  OwnProps & TopPageHandler
 export class TopPageForm extends React.Component<Props> {
@@ -16,7 +17,7 @@ export class TopPageForm extends React.Component<Props> {
     render(){
         return(
             <React.Fragment>
-                <ShowState clickCount={this.props.clickCount}/>
+                <ShowState clickCount={this.props.clickCount} maxCount={this.props.maxCount} />
                 <SubmitButton title='Ext' onClick={this.props.handleOnExtButtonClick}/>
                 <SubmitButton title='35' onClick={this.props.handleOn35ButtonClick}/>
                 <SubmitButton title='60' onClick={this.props.handleOn60ButtonClick}/>
