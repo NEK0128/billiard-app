@@ -22,7 +22,7 @@ export const Reducer = reducerWithInitialState(initialState)
         return { ...state, clickCount: 180, isPlaying: true }
     })
     .case(TextInputActions.addExtTimeCountDown, (state) => {
-        return { ...state, clickCount: state.clickCount + 30, isPlaying: true }
+        return { ...state, clickCount: state.clickCount + 60, isPlaying: true }
     })
     .case(TextInputActions.tick, (state) => {
         if (state.isPlaying) {
