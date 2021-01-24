@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {LinearProgress} from '@material-ui/core';
 import { makeStyles, } from '@material-ui/core/styles';
 
 interface OwnProps {
-    clickCount: number
+    clickCount: number,
+    maxCount: number,
 }
 
 type Props = OwnProps
@@ -16,8 +17,8 @@ const useStyles = makeStyles(theme => ({
   }));
 
 export const ShowState : React.FC<Props> = props => {
-    const [progress, setProgress] = useState(0);
-    let progressValue = props.clickCount / 211 * 100;
+    // const [progress, setProgress] = useState(0);
+    let progressValue = props.clickCount / props.maxCount * 100;
     const classes = useStyles();
     
     return(

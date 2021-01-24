@@ -15,7 +15,8 @@ export interface TopPageHandler {
 
 const mapStateToProps = (appState: AppState) => {
     return {
-        clickCount: appState.state.clickCount
+        clickCount: appState.state.clickCount,
+        maxCount: appState.state.maxCount,
     }
 }
 
