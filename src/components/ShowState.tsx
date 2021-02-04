@@ -1,5 +1,5 @@
 import React from 'react';
-import {LinearProgress} from '@material-ui/core';
+import { LinearProgress } from '@material-ui/core';
 import { makeStyles, } from '@material-ui/core/styles';
 
 interface OwnProps {
@@ -12,22 +12,30 @@ type Props = OwnProps
 const useStyles = makeStyles(theme => ({
     root: {
       height: theme.spacing(4),
-      // backgroundColor: theme.palette.background.default,
     },
   }));
 
+const EXTENSION_TIME = 60
+
 export const ShowState : React.FC<Props> = props => {
-    // const [progress, setProgress] = useState(0);
-    let progressValue = props.clickCount / props.maxCount * 100;
+    let progressValue = props.clickCount / (props.maxCount + EXTENSION_TIME) * 100;
     const classes = useStyles();
     
     return(
         <div>
             <label>残り時間</label>
             <div>
-                <LinearProgress color="primary" variant="determinate" value={progressValue} classes={{root: classes.root}}/>
+                <LinearProgress 
+                    color="primary" 
+                    variant="determinate" 
+                    value={progressValue} 
+                    classes={{root: classes.root}}
+                />
                 <div className="displayingTimer">
-                    <span className="Resting-Time">{props.clickCount}</span>
+                    { progressValue > 11  
+                        ? <span className="Resting-Time">{props.clickCount}</span>
+                        : <span className="Resting-Rest-10-Times">{props.clickCount}</span>
+                    }
                 </div>
             </div>
         </div>
