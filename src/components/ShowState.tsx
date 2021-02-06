@@ -32,7 +32,7 @@ export const ShowState : React.FC<Props> = props => {
                     classes={{root: classes.root}}
                 />
                 <div className="displayingTimer">
-                    { progressValue > 11  
+                    { props.clickCount > 10  
                         ? <span className="Resting-Time">{props.clickCount}</span>
                         : <span className="Resting-Rest-10-Times">{props.clickCount}</span>
                     }
